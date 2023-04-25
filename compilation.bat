@@ -24,7 +24,7 @@ del *.asm
 del *.map
 
 
-C:\Users\Zisquier\Documents\Projets\MasterSystem\2023-tests\tools\emulateurs\Emulicious-with-Java64 out/sms.sms
+C:\Users\Zisquier\Documents\Projets\MasterSystem\2023-tests\tools\emulateurs\Emulicious-with-Java64\Emulicious.exe out/sms.sms
 REM C:\Users\Zisquier\Documents\Projets\MasterSystem\2023-tests\tools\emulateurs\Fusion364\Fusion.exe out/sms.sms
 
 quit

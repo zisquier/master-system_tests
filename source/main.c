@@ -59,19 +59,7 @@ SMS_EMBED_SDSC_HEADER(0,0,2023,01,02,"Zisquier","MonProjet","Engine") ;
 
         // on "allume" l'écran de la master system
         SMS_displayOn();
-
-
-
-/* ---------------------------------------------------------------------------
--------------------------  BOUCLE PRINCIPALE DU JEU  -------------------------
-----------------------------------------------------------------------------*/
-    while (1) {
-        SMS_waitForVBlank();
-        
         SMS_initSprites();
-       
-        PosX = PosX + 2;
-        PosY = PosY + 1;
 
         SMS_addSprite(PosX,PosY,256);
         SMS_addSprite(PosX,PosY+8,256);
@@ -79,7 +67,40 @@ SMS_EMBED_SDSC_HEADER(0,0,2023,01,02,"Zisquier","MonProjet","Engine") ;
         SMS_addSprite(PosX+8,PosY+8,256);
 
         SMS_copySpritestoSAT();
-        }
+
+/* ---------------------------------------------------------------------------
+-------------------------  BOUCLE PRINCIPALE DU JEU  -------------------------
+----------------------------------------------------------------------------*/
+    while (1) {
+        SMS_waitForVBlank();
+        
+            if (SMS_getKeysStatus () & PORT_A_KEY_LEFT) {
+                PosX = PosX -1 ;
+            }
+            if (SMS_getKeysStatus () & PORT_A_KEY_RIGHT) {
+                PosX = PosX +1 ;
+            }
+            if (SMS_getKeysStatus () & PORT_A_KEY_UP) {
+                PosY = PosY -1 ;
+            }
+            if (SMS_getKeysStatus () & PORT_A_KEY_DOWN) {
+                PosY = PosY +1 ;
+            }
+
+
+        SMS_initSprites();
+
+        SMS_addSprite(PosX,PosY,256);
+        SMS_addSprite(PosX,PosY+8,256);
+        SMS_addSprite(PosX+8,PosY,256);
+        SMS_addSprite(PosX+8,PosY+8,256);
+
+        SMS_copySpritestoSAT();
+
+
+
+
+        };
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
 ----------------------------------------------------------------------------*/
